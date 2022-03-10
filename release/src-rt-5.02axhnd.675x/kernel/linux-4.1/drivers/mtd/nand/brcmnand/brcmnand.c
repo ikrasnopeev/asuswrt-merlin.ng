@@ -1336,7 +1336,7 @@ static void brcmnand_send_cmd(struct brcmnand_host *host, int cmd)
 			return;
 	} else
 #endif
-	BUG_ON(!(intfc & INTFC_CTLR_READY));
+	WARN_ON(!(intfc & INTFC_CTLR_READY));
 
 	mb(); /* flush previous writes */
 	brcmnand_write_reg(ctrl, BRCMNAND_CMD_START,
